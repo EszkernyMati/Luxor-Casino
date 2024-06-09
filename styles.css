@@ -1,0 +1,156 @@
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #202c3c;
+    color: #ffffff;
+}
+
+header {
+    position: relative;
+    background-color: #202c3c;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 30px;
+    font-weight: bolder;
+    z-index: 3;
+}
+
+/* Adjust padding-left in header for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding-left: 20px;
+    }
+
+    .login-register-buttons {
+        display: flex;
+        margin-left: auto;
+    }
+}
+
+.header-text {
+    cursor: pointer;
+    position: relative;
+    margin-left: 200px;
+}
+
+/* Sidebar menu settings */
+#menuButton {
+    position: fixed;
+    left: 22px;
+    top: 10px;
+    cursor: pointer;
+    width: 70px;
+    height: 30px;
+    font-weight: bolder;
+    font-size: 30px;
+    z-index: 2;
+}
+
+#sidebar {
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #101c2c;
+    overflow-x: hidden;
+    transition: transform 0.5s ease-in-out;
+    padding-top: 60px;
+    z-index: 1;
+    transform: translateX(0);
+}
+
+#sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    position: relative;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon .tooltip {
+    visibility: hidden;
+    background-color: #f9fafb;
+    color: #1c2a3a;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 9999; /* Ensures the tooltip is in front of everything else */
+    top: 50%;
+    left: 50px; /* Adjust this value to position the tooltip to the right */
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar-content .icon:hover {
+    transform: scale(1.2);
+    transition: transform 500ms ease-in-out, color 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.item:hover {
+    transform: scale(1.1);
+    transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.section {
+    background-color: #182840;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.section2 {
+    background-color: #182840;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+/* Adjust login-register-buttons for smaller screens */
+.login-register-buttons {
+    display: flex;
+    margin-left: auto; /* Align to the right */
+}
+
+@media (max-width: 768px) {
+    .login-register-buttons {
+        margin-left: 0; /* Remove large margin on smaller screens */
+    }
+}
